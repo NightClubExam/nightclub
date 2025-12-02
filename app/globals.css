@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+
+
+/* Reset */
+/* Tjek reset er rigtigt */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@theme inline {
+  
+  /* Colors */
+  --color-primary: #000000 ; /* Black */
+  --color-secondary: #ffffff ; /* White */
+  --color-accent: #ff2a70; /* Pink */
+
+/* Typography */ 
+
+  /* h1: 31.104px → 39.0625px */
+--h1-fontsize: clamp(1.944rem, 1.6947rem + 0.9635vw, 2.4414rem);
+
+
+}
+
