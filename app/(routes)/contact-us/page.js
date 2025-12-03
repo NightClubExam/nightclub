@@ -6,7 +6,7 @@ export default function ContactUs() {
   return (
     <div>
       <Navigation />
-      <PageHero />
+      <PageHero title="contact us"/>
 
       <Footer />
     </div>

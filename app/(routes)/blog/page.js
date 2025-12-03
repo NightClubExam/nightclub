@@ -7,7 +7,7 @@ export default function Blog() {
   return (
     <div>
       <Navigation />
-      <PageHero />
+      <PageHero title="blog" />
       <BlogPostSection />
       <Footer />
     </div>
