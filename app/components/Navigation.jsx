@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
+import Link from "next/link";
 
 const Navigation = () => {
   const [open, setOpen] = useState(false); // State-variabel "open" styrer om mobilmenuen er åben eller lukket
@@ -37,16 +38,16 @@ border-l-30 border-l-transparent"
         {/*Desktop-menu, skjult på mobil, vist fra md og op*/}
         <ul className="hidden md:flex gap-10 text-white">
           <li>
-            <a href="#">HOME</a>
+            <Link href="/">HOME</Link>
           </li>
           <li>
-            <a href="#">BLOG</a>
+            <Link href="/blog">BLOG</Link>
           </li>
           <li>
-            <a href="#">BOOK TABLE</a>
+            <Link href="/book-table">BOOK TABLE</Link>
           </li>
           <li>
-            <a href="#">CONTACT US</a>
+            <Link href="/contact-us">CONTACT US</Link>
           </li>
           <li>
             <a href="#">LOG IN</a>
