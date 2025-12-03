@@ -48,6 +48,9 @@ border-l-30 border-l-transparent"
           <li>
             <a href="#">CONTACT US</a>
           </li>
+          <li>
+            <a href="#">LOG IN</a>
+          </li>
         </ul>
       </nav>
       {/*Mobilmenu, popover overlay, – vises kun når open === true*/}
