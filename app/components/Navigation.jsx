@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
@@ -13,9 +14,9 @@ const Navigation = () => {
     <div>
       <nav className="flex items-center justify-around h-25 bg-black relative z-10 px-6 border-4 border-[#FF2A70] ">
         {/*Border med trekaneter i hjørnerne i de næste 2 divs  */}
-        <div class="absolute top-0 left-0 w-0 h-0 border-t-30 border-t-[#FF2A70] border-r-30 border-r-transparent"></div>
+        <div className="absolute top-0 left-0 w-0 h-0 border-t-30 border-t-[#FF2A70] border-r-30 border-r-transparent"></div>
         <div
-          class="absolute bottom-0 right-0 w-0 h-0 border-b-30 border-b-[#FF2A70]
+          className="absolute bottom-0 right-0 w-0 h-0 border-b-30 border-b-[#FF2A70]
 border-l-30 border-l-transparent"
         ></div>
 
@@ -38,7 +39,7 @@ border-l-30 border-l-transparent"
         {/*Desktop-menu, skjult på mobil, vist fra md og op*/}
         <ul className="hidden md:flex gap-10 text-white">
           <li>
-            <Link href="/">HOME</Link>
+            <Link href="/"> HOME </Link>
           </li>
           <li>
             <Link href="/blog">BLOG</Link>
