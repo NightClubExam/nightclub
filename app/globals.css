@@ -1,9 +1,6 @@
 @import "tailwindcss";
 
-
-
 /* Reset */
-/* Tjek reset er rigtigt */
 * {
   margin: 0;
   padding: 0;
@@ -23,10 +20,62 @@ img {
   --color-accent: #ff2a70; /* Pink */
 
 /* Typography */ 
+--h1-fontsize: clamp(2rem, 1.8696rem + 0.6522vw, 2.375rem); 
+--h2-fontsize: clamp(2rem, 1.8696rem + 0.6522vw, 2.375rem);
+--h3-fontsize: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
+--h4-fontsize: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
+--eyebrow-fontsize: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
+--p-fontsize: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem)
 
-  /* h1: 31.104px → 39.0625px */
---h1-fontsize: clamp(1.944rem, 1.6947rem + 0.9635vw, 2.4414rem);
-
-
+/* Font weight */ 
+--font-weight-regular:400;
+--font-weight-medium: 500;
 }
+
+/* Global Styles */
+body {
+  font-family: var(--font-ubuntu), sans-serif;
+  background-color: var(--color-secondary);
+}
+
+h1{
+  font-size: var(--h1-fontsize);
+   color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+}
+
+h2{
+  font-size: var(--h2-fontsize);
+   color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+}
+
+h3{
+  font-size: var(--h3-fontsize);
+   color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+}
+
+h4{
+  font-size: var(--h4-fontsize);
+   color: var(--color-accent);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+}
+
+p{
+  font-size: var(--p-fontsize);
+   color: var(--color-primary);
+  font-weight: var(--font-weight-regular);
+}
+
+.eyebrow {
+  color: var(--color-accent);
+  font-size: var(--eyebrow-fontsize);
+  font-weight: var(--font-weight-medium);
+}
+
 
