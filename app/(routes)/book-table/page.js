@@ -7,7 +7,7 @@ export default function BookTable() {
   return (
     <div>
       <Navigation />
-      <PageHero />
+      <PageHero title="book table"/>
       <BookForm />
       <Footer />
     </div>

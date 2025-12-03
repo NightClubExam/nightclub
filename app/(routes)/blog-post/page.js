@@ -7,7 +7,7 @@ export default function BlogPost() {
   return (
     <div>
       <Navigation />
-      <BlogPost />
+      <BlogPost title="blog post" />
       <CommentForm />
       <Footer />
     </div>
