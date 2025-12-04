@@ -17,6 +17,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <div>
+      <Hero />
       <Suspense
         fallback={
           <div className="w-full h-screen flex items-center justify-center bg-black">
