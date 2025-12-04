@@ -1,4 +1,3 @@
-
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
 import Welcome from "./components/Welcome";
@@ -14,11 +13,11 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <div>
-      <Hero/>
+      <Hero />
       <Navigation />
       <Welcome />
       <Events />
-      <Gallery/>
+      <Gallery />
       <MediaPlayer />
       <Video />
       <Testimonials />
