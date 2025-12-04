@@ -4,6 +4,7 @@
 import { useActionState } from "react";
 import { submitContactForm } from "../action/contact";
 import { useFormStatus } from "react-dom";
+import {AiFillCheckCircle, AiFillCloseCircle} from "react-icons/ai";
 
 
 // Response message (tilbagemelding):
@@ -65,45 +66,76 @@ const ContactUsForm = () => {
       >
         <ResponseMessages state={state} />
         {/* sender state-objektet fra useActionState som prop til ResponseMessages (dette gør at man nu kan bruge state.success og state.errors til at vise beskeder) */}
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          defaultValue={state.fields?.name}
-          className={`p-4 text-white placeholder-white 
-      ${state.errors?.name ? "border-red-500" : state.fields?.name ? "border-green-500" : "border-white/20"} 
+        <div className="relative">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            defaultValue={state.fields?.name}
+            className={`p-4 pr-12 text-white placeholder-white w-full 
+      ${state.errors?.name ? "border-red-400" : state.fields?.name ? "border-green-400" : "border-white/20"} 
       border rounded`}
-        />
-        {/* Viser fejlmeddelelse */}
-        {state.errors?.name && (
-          <p className="text-red-500! -mt-3">{state.errors.name}</p>
-        )}
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          defaultValue={state.fields?.email}
-          className={`p-4 text-white placeholder-white 
-      ${state.errors?.email ? "border-red-500" : state.fields?.email ? "border-green-500" : "border-white/20"} 
+          />
+          {/* Ikon til højre for input */}
+          {state.errors?.name ? (
+            <AiFillCloseCircle className="absolute right-4 top-4  text-red-400 text-2xl pointer-events-none" />
+          ) : state.fields?.name ? (
+            <AiFillCheckCircle className="absolute right-4 top-4  text-green-400 text-2xl pointer-events-none" />
+          ) : null}
+
+          {/* Viser fejlmeddelelse */}
+          {state.errors?.name && (
+            <p className="text-red-400! mt-1">{state.errors.name}</p>
+          )}
+        </div>
+
+        <div className="relative">
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            defaultValue={state.fields?.email}
+            className={`p-4 text-white placeholder-white w-full 
+      ${state.errors?.email ? "border-red-400" : state.fields?.email ? "border-green-400" : "border-white/20"} 
       border rounded`}
-        />
-        {/* Viser fejlmeddelelse */}
-        {state.errors?.email && (
-          <p className="text-red-500! -mt-3">{state.errors.email}</p>
-        )}
-        <textarea
-          type="text"
-          name="comment"
-          placeholder="Your Comment"
-          defaultValue={state.fields?.comment}
-          className={`p-4 text-white placeholder-white 
-      ${state.errors?.comment ? "border-red-500" : state.fields?.comment ? "border-green-500" : "border-white/20"} 
+          />
+
+          {/* Ikon til højre for input */}
+          {state.errors?.email ? (
+            <AiFillCloseCircle className="absolute right-4 top-4  text-red-400 text-2xl pointer-events-none" />
+          ) : state.fields?.email ? (
+            <AiFillCheckCircle className="absolute right-4 top-4  text-green-400 text-2xl pointer-events-none" />
+          ) : null}
+
+          {/* Viser fejlmeddelelse */}
+          {state.errors?.email && (
+            <p className="text-red-400! mt-1">{state.errors.email}</p>
+          )}
+        </div>
+
+        <div className="relative">
+          <textarea
+            type="text"
+            name="comment"
+            placeholder="Your Comment"
+            defaultValue={state.fields?.comment}
+            className={`p-4 text-white placeholder-white w-full
+      ${state.errors?.comment ? "border-red-400" : state.fields?.comment ? "border-green-400" : "border-white/20"} 
       border rounded`}
-        />
-        {/* Viser fejlmeddelelse */}
-        {state.errors?.comment && (
-          <p className="text-red-500!">{state.errors.comment}</p>
-        )}
+          />
+
+          {/* Ikon til højre for input */}
+          {state.errors?.comment ? (
+            <AiFillCloseCircle className="absolute right-4 top-4  text-red-400 text-2xl pointer-events-none" />
+          ) : state.fields?.comment ? (
+            <AiFillCheckCircle className="absolute right-4 top-4  text-green-400 text-2xl pointer-events-none" />
+          ) : null}
+
+          {/* Viser fejlmeddelelse */}
+          {state.errors?.comment && (
+            <p className="text-red-400! mt-1">{state.errors.comment}</p>
+          )}
+        </div>
         <div className="flex justify-end">
           <SubmitButton />
         </div>

@@ -24,11 +24,7 @@ export const submitContactForm = async (prevState, formData)=>{
     // Validering af email:
     if(!email){ //Hvis emailfeltet er tomt:
         state.errors.email = "Email is required";
-    } else if (!email.includes("@")){ //Hvis email ikke indeholder @:
-        state.errors.email = "Email must contain @";
-    } else if (email.includes(" ")){ //Hvis email indeholder mellemrum:
-        state.errors.email = "Email must not contain spaces";
-    }
+    } 
 
     // Validering af kommentar: 
     if (!comment){ //Hvis kommentarfeltet er tomt
@@ -44,8 +40,26 @@ export const submitContactForm = async (prevState, formData)=>{
         return state;
     }
 
+    // Send data til API
+
+    // fetch: bruges til at sende en HTTP-anmodning til en server (contact_messages)
+    const response = await fetch("http://localhost:4000/contact_messages", {
+      method: "POST", //POST bruges til at sende (oprette) nye data på serveren
+      headers: { "Content-Type": "application/json" }, // Fortæller serveren at dataen er i JSON-format
+      body: JSON.stringify({
+        // Konverterer JavaScript-objektet til en JSON-streng
+        name, //Navn fra formularen
+        email, // Email fra formularen
+        content: comment, //Kommentar fra formularen
+        date: new Date().toISOString(), // Dato og tid for beskeden
+        // new Date() opretter et nyt data-objekt med det aktuelle tidspunkt
+        // .toISOString() laver datoen om til en tekst i ISO-format (som er standard format for datoer i databaser og API'er fx. 2025-12-04T10:15:30.000Z)
+      }),
+    });
+
+    state.success = response.ok;
+
     //Hvis der ikke er fejl:
-    state.success = true;
     return state;
 }
  
