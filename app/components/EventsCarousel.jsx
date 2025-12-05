@@ -82,7 +82,7 @@ export default function EventsCarousel({ events }) {
               {" "}
               {/*bestemmer hvor mange billeder som bliver vist på en gang*/}
               {/*Lav et slide for hvert event, og giv det et id agtig, så React kan holde styr på dem */}
-              <div className="relative overflow-hidden group border">
+              <div className="relative overflow-hidden group ">
                 <Image
                   src={`/assets/content-img/event-thumb${index + 1}.jpg`}
                   alt={event.title ?? `event${index + 1}`}
@@ -90,25 +90,34 @@ export default function EventsCarousel({ events }) {
                   height={400}
                   className="object-cover w-full h-[300px]"
                 />
-                {/* Dato og location bar */}
-                <div className="bg-[#FF2A70] px-4 py-2 flex gap-4">
-                  <p className="text-white!">{event.date}</p>
-                  <p className="text-white!">{event.location}</p>
-                </div>
+
                 {/* Overlay der vises ved hover */}
                 <div
-                  className="absolute inset-0 bg-black opacity-0 group-hover:opacity-100 
-                  flex flex-col items-center justify-center transition-opacity 
-                  duration-300 border-4 border-[#FF2A70]"
+                  className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 
+                  flex flex-col items-center justify-between transition-opacity duration-300 border-y-2 border-accent border-x-0 "
                 >
-                  <div className="absolute top-0 left-0 w-0 h-0 border-t-50 border-t-[#FF2A70] border-r-50 border-r-transparent"></div>
-                  <div
-                    className="absolute bottom-0 right-0 w-0 h-0 border-b-50 border-b-[#FF2A70]
-border-l-50 border-l-transparent"
-                  ></div>
-                  <p className="text-white! font-bold">{event.title}</p>
-                  <p className="text-white!">{event.description}</p>
+                  <div className="absolute top-0 left-0 w-0 h-0 border-t-50 border-t-accent border-r-50 border-r-transparent"></div>
+                  <div className="absolute bottom-0 right-0 w-0 h-0 border-b-50 border-b-accent border-l-50 border-l-transparent"></div>
+                  <div className="flex items-center justify-center h-full">
+                    <button className="bg-accent text-secondary py-2! px-4! ">
+                      BOOK NOW
+                    </button>
+                  </div>
+
+                  <div className="bg-primary ">
+                    <p className="text-secondary! font-bold! text-[24px]!">
+                      {event.title}
+                    </p>
+                    <p className="text-secondary! text-[14px]">
+                      {event.description}
+                    </p>
+                  </div>
                 </div>
+              </div>
+              {/* Dato og location bar */}
+              <div className="bg-accent px-4 py-2 flex gap-4">
+                <p className="text-secondary!">{event.date}</p>
+                <p className="text-secondary!">{event.location}</p>
               </div>
             </CarouselItem>
           ))}
@@ -123,7 +132,11 @@ border-l-50 border-l-transparent"
             // Brug karusellens API til at hoppe til det valgte slide
             onClick={() => api?.scrollTo(index)}
             // Fremhæv knappen hvis den svarer til det aktuelle slide
-            className={current === index ? "bg-[#FF2A70]" : "bg-white"}
+            className={
+              current === index
+                ? "bg-accent border-0"
+                : "bg-secondary border-0 hover:bg-gray-300"
+            }
           />
         ))}
       </div>
