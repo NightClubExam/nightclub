@@ -107,3 +107,4 @@ border-l-30 border-l-transparent"
 };
 
 export default Welcome;
+
