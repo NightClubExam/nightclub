@@ -9,8 +9,8 @@ import Link from "next/link";
 
 const Navigation = () => {
   const [open, setOpen] = useState(false); // State-variabel "open" styrer om mobilmenuen er åben eller lukket
-const pathname = usePathname(); // Henter den nuværende sti
-const isActive = (path) => pathname === path; // Funktion til at tjekke om et link er aktivt
+  const pathname = usePathname(); // Henter den nuværende sti
+  const isActive = (path) => pathname === path; // Funktion til at tjekke om et link er aktivt
   return (
     <div className="sticky top-0 z-40">
       <nav className="flex items-center justify-around h-25 bg-black relative z-10 px-6 border-4 border-[#FF2A70] ">
@@ -22,13 +22,15 @@ border-l-30 border-l-transparent"
         ></div>
 
         <div>
-          <Image
-            src="/assets/icon/Logo_main.svg"
-            alt="Nightclub Logo"
-            width={160}
-            height={200}
-            className="object-contain "
-          />
+          <a href="/">
+            <Image
+              src="/assets/icon/Logo_main.svg"
+              alt="Nightclub Logo"
+              width={160}
+              height={200}
+              className="object-contain "
+            />
+          </a>
         </div>
         {/*Burger knap, kun synlig på mobil, md:hidden skjuler det på desktop*/}
         <button
@@ -40,16 +42,37 @@ border-l-30 border-l-transparent"
         {/*Desktop-menu, skjult på mobil, vist fra md og op*/}
         <ul className="hidden md:flex gap-10 text-white">
           <li>
-            <Link href="/" className={`nav-underline ${isActive("/") ? "active" : ""}`}> HOME </Link>
+            <Link
+              href="/"
+              className={`nav-underline ${isActive("/") ? "active" : ""}`}
+            >
+              {" "}
+              HOME{" "}
+            </Link>
           </li>
           <li>
-            <Link href="/blog" className={`nav-underline ${isActive("/blog") ? "active" : ""}`}>BLOG</Link>
+            <Link
+              href="/blog"
+              className={`nav-underline ${isActive("/blog") ? "active" : ""}`}
+            >
+              BLOG
+            </Link>
           </li>
           <li>
-            <Link href="/book-table" className={`nav-underline ${isActive("/book-table") ? "active" : ""}`}>BOOK TABLE</Link>
+            <Link
+              href="/book-table"
+              className={`nav-underline ${isActive("/book-table") ? "active" : ""}`}
+            >
+              BOOK TABLE
+            </Link>
           </li>
           <li>
-            <Link href="/contact-us" className={`nav-underline ${isActive("/contact-us") ? "active" : ""}`}>CONTACT US</Link>
+            <Link
+              href="/contact-us"
+              className={`nav-underline ${isActive("/contact-us") ? "active" : ""}`}
+            >
+              CONTACT US
+            </Link>
           </li>
           <li>
             <a href="#">LOG IN</a>
@@ -68,16 +91,16 @@ border-l-30 border-l-transparent"
           </button>
 
           <nav className="flex flex-col items-center gap-6 font-bold text-xl relative z-10">
-            <a className="block" href="#">
+            <a className="block" href="/">
               HOME
             </a>
-            <a className="block" href="#">
+            <a className="block" href="/blog">
               BLOG
             </a>
-            <a className="block" href="#">
+            <a className="block" href="/book-table">
               BOOK TABLE
             </a>
-            <a className="block" href="#">
+            <a className="block" href="/contact-us">
               CONTACT US
             </a>
           </nav>
