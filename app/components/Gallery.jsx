@@ -83,12 +83,13 @@ const Gallery = () => {
 
   // Det aktuelle valgte billede
   const currentImage = selectedIndex !== null ? images[selectedIndex] : null;
+  
 
   return (
     <motion.section
       initial="hidden"
       whileInView="show"
-      viewport={{ amount: 0.3 }}
+      viewport={{ amount: 0.3, once: true }}
     >
       {/* Overskrift */}
       <div className="max-w-[75%] mx-auto flex flex-col items-center mt-20 relative">
