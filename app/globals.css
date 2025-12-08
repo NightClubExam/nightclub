@@ -99,6 +99,34 @@ p {
   font-weight: var(--font-weight-medium);
 }
 
+.nav-underline {
+  position: relative;
+}
+
+/*Underline på navigation*/
+.nav-underline::after {
+  content: "";
+  position: absolute;
+  left: 60%;
+  transform: translateX(-50%);
+  bottom: -12px;
+  width: 160px; /* tilpas */
+  height: 12px; /* tilpas */
+  background-image: url('/assets/bottom_line2.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.nav-underline:hover::after {
+  opacity: 1;
+}
+
+.nav-underline.active::after {
+  opacity: 1;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -107,3 +135,5 @@ p {
     @apply bg-background text-foreground;
   }
 }
+
+

@@ -9,9 +9,10 @@ import Link from "next/link";
 
 const Navigation = () => {
   const [open, setOpen] = useState(false); // State-variabel "open" styrer om mobilmenuen er åben eller lukket
-
+const pathname = usePathname(); // Henter den nuværende sti
+const isActive = (path) => pathname === path; // Funktion til at tjekke om et link er aktivt
   return (
-    <div>
+    <div className="sticky top-0 z-40">
       <nav className="flex items-center justify-around h-25 bg-black relative z-10 px-6 border-4 border-[#FF2A70] ">
         {/*Border med trekaneter i hjørnerne i de næste 2 divs  */}
         <div className="absolute top-0 left-0 w-0 h-0 border-t-30 border-t-[#FF2A70] border-r-30 border-r-transparent"></div>
@@ -39,16 +40,16 @@ border-l-30 border-l-transparent"
         {/*Desktop-menu, skjult på mobil, vist fra md og op*/}
         <ul className="hidden md:flex gap-10 text-white">
           <li>
-            <Link href="/"> HOME </Link>
+            <Link href="/" className={`nav-underline ${isActive("/") ? "active" : ""}`}> HOME </Link>
           </li>
           <li>
-            <Link href="/blog">BLOG</Link>
+            <Link href="/blog" className={`nav-underline ${isActive("/blog") ? "active" : ""}`}>BLOG</Link>
           </li>
           <li>
-            <Link href="/book-table">BOOK TABLE</Link>
+            <Link href="/book-table" className={`nav-underline ${isActive("/book-table") ? "active" : ""}`}>BOOK TABLE</Link>
           </li>
           <li>
-            <Link href="/contact-us">CONTACT US</Link>
+            <Link href="/contact-us" className={`nav-underline ${isActive("/contact-us") ? "active" : ""}`}>CONTACT US</Link>
           </li>
           <li>
             <a href="#">LOG IN</a>
