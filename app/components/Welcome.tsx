@@ -8,13 +8,13 @@ import WelcomeCard from "./WelcomeCard";
 
 const Welcome = () => {
   return (
-    <section className="flex flex-col items-center justify-center md:max-w-[80%] mx-auto gap-8">
+    <section className="flex flex-col items-center justify-center md:max-w-[80%] mx-auto gap-4">
       <div className="flex flex-col items-center ">
         <h1>Welcome in nightclub</h1>
         <Image
           src="/assets/bottom_line2.png"
           alt="line"
-          width={160}
+          width={500}
           height={200}
           className="object-contain"
         />
