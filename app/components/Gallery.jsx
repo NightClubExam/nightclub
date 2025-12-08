@@ -1,3 +1,6 @@
+// FRIDA
+//import framermotion - npm install framer-motion
+
 "use client";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
@@ -18,8 +21,8 @@ const container = {
 
 // Child-animation – styrer hvordan de kommer ind
 const item = {
-  hidden: { opacity: 0, x: -60 }, 
-  show: { 
+  hidden: { opacity: 0, x: -60 },
+  show: {
     opacity: 1,
     x: 0,
     transition: { duration: 0.5, ease: "easeOut" },
@@ -74,7 +77,7 @@ const Gallery = () => {
   };
 
   const handlePrev = (e) => {
-    e.stopPropagation(); 
+    e.stopPropagation();
     setSelectedIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
@@ -178,7 +181,7 @@ const Gallery = () => {
             onClick={() => setSelectedIndex(null)} // luk modal når man klikker udenfor
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }} 
+            exit={{ opacity: 0 }}
           >
             <div
               className="relative w-full max-w-[800px] mx-auto"
@@ -269,8 +272,9 @@ const Gallery = () => {
                   />
                 </motion.div>
               </AnimatePresence>
-
-              <PrimaryButton />
+              <div className="justify-end flex">
+                <PrimaryButton title="Read more" />
+              </div>
             </div>
           </motion.div>
         )}
