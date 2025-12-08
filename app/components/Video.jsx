@@ -1,22 +1,31 @@
+//Nanna
 "use client";
 import { useState } from "react";
 import Image from "next/image";
 import { BiCaretRightSquare, BiCaretLeftSquare } from "react-icons/bi";
 
 const Video = () => {
-  const [video, setVideo] = useState([]);
-  // Handlers til næste/forrige billede
+  // Liste af videoer
+  const videos = [
+    "/assets/media/video-dj-crowd-2.mp4",
+    "/assets/media/video-dj-crowd1.mp4",
+  ];
+
+  // Hvilken video der vises nu
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
   const handleNext = (e) => {
-    e.stopPropagation(); // forhindre luk ved klik inde i modal
-    setSelectedIndex((prev) => (prev + 1) % video.length); // loop tilbage til start
+    e.stopPropagation();
+    setSelectedIndex((prev) => (prev + 1) % videos.length);
   };
 
   const handlePrev = (e) => {
     e.stopPropagation();
-    setSelectedIndex((prev) => (prev - 1 + video.length) % images.length);
+    setSelectedIndex((prev) => (prev - 1 + videos.length) % videos.length);
   };
+
   return (
-    <div className="max-w-[80%] mx-auto">
+    <div className="md:max-w-[80%] md:mx-auto relative sm:w-full">
       <div className="flex flex-col items-center pb-4">
         <h1>Latest Video</h1>
         <Image
@@ -27,43 +36,36 @@ const Video = () => {
           className="object-contain"
         />
       </div>
-      <div>
-        <div className="relative ">
-          <div className="absolute top-0 left-0 w-0 h-0 border-t-50 border-t-accent border-r-50 border-r-transparent"></div>
-          <div className="absolute bottom-0 right-0 w-0 h-0 border-b-50 border-b-accent border-l-50 border-l-transparent"></div>
-          <video
-            className="videoo w-full"
-            src="assets/media/video-dj-crowd-2.mp4"
-            width="400"
-            height="250"
-            controls
-          ></video>
-        </div>
-        <div className="relative ">
-          <div className="absolute top-0 left-0 w-0 h-0 border-t-50 border-t-accent border-r-50 border-r-transparent"></div>
-          <div className="absolute bottom-0 right-0 w-0 h-0 border-b-50 border-b-accent border-l-50 border-l-transparent"></div>
-          <video
-            className="videoo w-full"
-            src="assets/media/video-dj-crowd1.mp4"
-            width="400"
-            height="250"
-            controls
-          ></video>
-        </div>
+
+      {/* Kun én video ad gangen */}
+      <div className="relative">
+        <div className="absolute top-0 left-0 w-0 h-0 border-t-50 border-t-accent border-r-50 border-r-transparent"></div>{" "}
+        <div className="absolute bottom-0 right-0 w-0 h-0 border-b-50 border-b-accent border-l-50 border-l-transparent"></div>
+        <video
+          key={videos[selectedIndex]} // så den reloader når du skifter
+          className="videoo w-full"
+          src={videos[selectedIndex]}
+          width="400"
+          height="250"
+          controls
+        />
       </div>
-      {/* Dekstop Pile */}
-      <BiCaretLeftSquare
-        size={50}
-        color="white"
-        className="absolute -left-[60px] top-1/2 -translate-y-1/2 cursor-pointer hidden md:block"
-        onClick={handlePrev}
-      />
-      <BiCaretRightSquare
-        size={50}
-        color="white"
-        className="absolute -right-[60px] top-1/2 -translate-y-1/2 cursor-pointer hidden md:block"
-        onClick={handleNext}
-      />
+
+      <div className="flex justify-center">
+        {/* Pile til navigation */}
+        <BiCaretLeftSquare
+          size={50}
+          color="white"
+          className="cursor-pointer hidden md:block"
+          onClick={handlePrev}
+        />
+        <BiCaretRightSquare
+          size={50}
+          color="white"
+          className="   cursor-pointer hidden md:block"
+          onClick={handleNext}
+        />
+      </div>
     </div>
   );
 };
