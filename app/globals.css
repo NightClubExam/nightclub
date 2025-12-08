@@ -112,7 +112,7 @@ p {
   bottom: -12px;
   width: 160px; /* tilpas */
   height: 12px; /* tilpas */
-  background-image: url('/assets/bottom_line2.png');
+  background-image: url("/assets/bottom_line2.png");
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 0;
@@ -135,5 +135,4 @@ p {
     @apply bg-background text-foreground;
   }
 }
-
 
