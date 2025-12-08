@@ -23,9 +23,9 @@ export default async function Events() {
         <Image
           src="/assets/bottom_line2.png"
           alt="line"
-          width={160}
+          width={500}
           height={200}
-          className="object-contain"
+          className="object-contain pb-6!"
         />
 
         {/* Kalder client-komponent og sender events-array som prop */}
