@@ -1,9 +1,5 @@
 import Navigation from "./components/Navigation";
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
-const Hero = dynamic(() => import("./components/Hero"), {
-  suspense: true,
-} as any);
+import Hero from "./components/Hero";
 import Welcome from "./components/Welcome";
 import Events from "./components/Events";
 import Gallery from "./components/Gallery";
@@ -17,19 +13,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <div>
-      <Suspense
-        fallback={
-          <div className="w-full h-screen flex items-center justify-center bg-black">
-            <img
-              src="/assets/loader/madbars.gif"
-              alt="loading"
-              className="w-32 h-32 object-contain"
-            />
-          </div>
-        }
-      >
         <Hero />
-      </Suspense>
       <Navigation />
       <Welcome />
       <Events />
