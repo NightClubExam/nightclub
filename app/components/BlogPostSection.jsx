@@ -1,5 +1,12 @@
+import BlogCard from "./BlogCard";
+
 const BlogPostSection = () => {
-    return ( <div>Blog Post Section</div> );
+    return ( 
+    <div>
+
+        <BlogCard />
+
+    </div> );
 }
  
 export default BlogPostSection;
