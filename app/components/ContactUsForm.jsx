@@ -73,7 +73,7 @@ const ContactUsForm = () => {
             placeholder="Your Name"
             defaultValue={state.fields?.name}
             className={`p-4 pr-12 text-white placeholder-white w-full 
-      ${state.errors?.name ? "border-red-400" : state.fields?.name ? "border-green-400" : "border-white/20"} 
+      ${state.errors?.name ? "border-red-400" : state.fields?.name ? "border-green-400" : "border-white"} 
       border rounded`}
           />
           {/* Ikon til højre for input */}
@@ -96,7 +96,7 @@ const ContactUsForm = () => {
             placeholder="Your Email"
             defaultValue={state.fields?.email}
             className={`p-4 text-white placeholder-white w-full 
-      ${state.errors?.email ? "border-red-400" : state.fields?.email ? "border-green-400" : "border-white/20"} 
+      ${state.errors?.email ? "border-red-400" : state.fields?.email ? "border-green-400" : "border-white"} 
       border rounded`}
           />
 
@@ -120,7 +120,7 @@ const ContactUsForm = () => {
             placeholder="Your Comment"
             defaultValue={state.fields?.comment}
             className={`p-4 text-white placeholder-white w-full
-      ${state.errors?.comment ? "border-red-400" : state.fields?.comment ? "border-green-400" : "border-white/20"} 
+      ${state.errors?.comment ? "border-red-400" : state.fields?.comment ? "border-green-400" : "border-white"} 
       border rounded`}
           />
 
