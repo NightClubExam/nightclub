@@ -1,6 +1,7 @@
 //Alberte Remmer
-
+// Gammel form skal slettes
 "use client";
+
 import { useActionState } from "react";
 import { submitContactForm } from "../action/contact";
 import { useFormStatus } from "react-dom";
