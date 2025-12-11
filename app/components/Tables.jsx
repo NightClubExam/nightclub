@@ -50,12 +50,8 @@ const BookTable = ({ onTableSelect, selectedTable }) => {
       <div className="grid grid-cols-1 justify-items-center md:grid-cols-3 md:gap-y-6 lg:grid-cols-5 lg:gap-y-12 my-8">
         {tables.map((table) => (
           <div
-            className={`relative cursor-pointer transition-all duration-200 
-              ${
-                selectedTable === table.number
-                  ? "scale-102 ring-1 ring-accent"
-                  : "hover:scale-102 hover:opacity-90"
-              }`}
+            className={`relative cursor-pointer transition-all duration-200 group
+      ${selectedTable === table.number ? "scale-102" : "hover:scale-102 hover:opacity-90"}`}
             key={table.number}
             onClick={() => onTableSelect(table.number)}
           >
@@ -65,7 +61,14 @@ const BookTable = ({ onTableSelect, selectedTable }) => {
               width={285}
               height={186}
             />
-            <span className="absolute inset-0 flex items-center justify-center text-white text-4xl font-medium">
+            <span
+              className={`absolute inset-0 flex items-center justify-center text-4xl font-medium
+      ${
+        selectedTable === table.number
+          ? "text-accent"
+          : "text-white group-hover:text-accent"
+      }`}
+            >
               {table.number}
             </span>
           </div>
