@@ -1,10 +1,10 @@
 //Nanna
 import Navigation from "../../components/Navigation";
 import { Suspense } from "react";
-import CommentForm from "../../components/CommentForm";
 import Footer from "../../components/Footer";
 import Image from "next/image";
 import PageHero from "../../components/PageHero";
+import CommentSection from "../../components/CommentSection";
 
 export default function BlogPost({ searchParams }) {
   return (
@@ -13,7 +13,7 @@ export default function BlogPost({ searchParams }) {
       <Suspense>
         <Filtreringscontainer searchParams={searchParams} />
       </Suspense>
-      <CommentForm />
+      <CommentSection />
       <Footer />
     </div>
   );
@@ -49,6 +49,7 @@ async function Filtreringscontainer({ searchParams }) {
           <p className="mt-4">{post.content}</p>
         </div>
       </div>
+      
     </>
   );
 }
