@@ -104,11 +104,11 @@ export default function EventsCarousel({ events }) {
                     </button>
                   </div>
 
-                  <div className="bg-primary ">
+                  <div className="bg-primary p-4! px-5!">
                     <p className="text-secondary! font-bold! text-[24px]!">
                       {event.title}
                     </p>
-                    <p className="text-secondary! text-[14px]">
+                    <p className="text-secondary! text-[14px] line-clamp-3 ">
                       {event.description}
                     </p>
                   </div>
