@@ -11,7 +11,7 @@ const FooterCard = ({ pic, date, text }) => {
       </div>
 
       <div className="text-left ">
-        <div className="text-base!">{text}</div>
+        <div className="text-base! text-secondary! ">{text}</div>
         <div className="text-accent! text-sm!">{date}</div>
       </div>
     </div>
