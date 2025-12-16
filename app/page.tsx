@@ -13,17 +13,19 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <div>
-        <Hero />
-      <Navigation />
-      <Welcome />
-      <Events />
-      <Gallery />
-      <MediaPlayer />
-      <Video />
-      <Testimonials />
-      <RecentBlog />
-      <Subscription />
-      <Footer />
+      <Hero />
+      <div className="flex flex-col gap-16">
+        <Navigation />
+        <Welcome />
+        <Events />
+        <Gallery />
+        <MediaPlayer />
+        <Video />
+        <Testimonials />
+        <RecentBlog />
+        <Subscription />
+        <Footer />
+      </div>
     </div>
   );
 }

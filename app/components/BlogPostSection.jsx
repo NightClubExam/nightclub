@@ -1,3 +1,4 @@
+//FRIDA
 import BlogCard from "./BlogCard";
 
 const BlogPostSection = () => {

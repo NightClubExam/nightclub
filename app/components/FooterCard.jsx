@@ -1,3 +1,4 @@
+//NANNA
 import Image from "next/image";
 
 const FooterCard = ({ pic, date, text }) => {
