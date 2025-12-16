@@ -236,8 +236,6 @@ export default function MediaPlayer() {
   };
   // Stop lyd når komponent unmountes
   useEffect(() => {
-    // første track starter automatisk
-    handleSelectTrack(activeTrack);
     return () => {
       // Stopper musikken når komponenten fjernes, så der ikke er lyd der spiller i baggrunden
       soundRef.current?.stop();
