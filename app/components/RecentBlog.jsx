@@ -1,3 +1,4 @@
+//FRIDA
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -17,7 +18,7 @@ const RecentBlog = () => {
   }, []);
   return (
     <div className="max-w-[80%] mx-auto flex flex-col items-center">
-      <div className="max-w-[75%] mx-auto flex flex-col items-center mt-20 relative mb-5">
+      <div className="max-w-[75%] mx-auto flex flex-col items-center relative mb-5">
         <h1>Recent Blog</h1>
         <Image
           src="/assets/bottom_line.png"

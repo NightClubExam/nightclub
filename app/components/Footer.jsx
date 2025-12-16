@@ -1,4 +1,4 @@
-//Nanna
+//NANNA
 import Image from "next/image";
 import { FaFacebookF } from "react-icons/fa";
 import { FaSnapchatGhost } from "react-icons/fa";

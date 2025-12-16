@@ -1,4 +1,4 @@
-//Nanna
+//NANNA
 import Navigation from "../../components/Navigation";
 import { Suspense } from "react";
 import Footer from "../../components/Footer";
