@@ -1,3 +1,4 @@
+//NANNA
 import Image from "next/image";
 
 const FooterCard = ({ pic, date, text }) => {
@@ -11,8 +12,8 @@ const FooterCard = ({ pic, date, text }) => {
       </div>
 
       <div className="text-left ">
-        <p className="text-base!">{text}</p>
-        <p className="text-accent! text-sm!">{date}</p>
+        <div className="text-base! text-secondary! ">{text}</div>
+        <div className="text-accent! text-sm!">{date}</div>
       </div>
     </div>
   );

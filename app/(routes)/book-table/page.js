@@ -4,13 +4,12 @@ import Navigation from "../../components/Navigation";
 import PageHero from "../../components/PageHero";
 import Tables from "../../components/Tables";
 import Footer from "../../components/Footer";
-import BookTableForm from "../../components/BookTableForm";
 import { useState } from "react";
+import ReservationForm from "../../components/ReservationForm";
 
 export default function BookTable() {
   //State til at gemme bordnummer:
   const [selectedTable, setSelectedTable] = useState(null);
-   //const [selectedDate, setSelectedDate] = useState(null);
   return (
     <div>
       <Navigation />
@@ -18,12 +17,10 @@ export default function BookTable() {
       <Tables
         onTableSelect={setSelectedTable}
         selectedTable={selectedTable}
-        //selectedDate={selectedDate}
       />
-      <BookTableForm
+      <ReservationForm
         selectedTable={selectedTable}
         onTableSelect={setSelectedTable}
-        //onDateChange={setSelectedDate}
       />
       <Footer />
     </div>

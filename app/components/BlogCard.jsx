@@ -1,3 +1,4 @@
+//FRIDA
 "use client";
 import Image from "next/image";
 import Link from "next/link";
@@ -41,14 +42,14 @@ const BlogCard = () => {
             {" "}
             {/* px-8 = 32px padding horisontalt, py kan justeres */}
             <h3 className="mt-3">{post.title}</h3>
-            <p className="text-accent font-bold text-sm my-2.5">
+            <p className="text-accent! font-bold! text-sm! my-2.5">
               {post.author} / 3 Comments / 16 Nov 2018
             </p>
             <p className="line-clamp-6">{post.content}</p>
             <div className="flex justify-center lg:justify-end my-6">
-            <Link href="/blog-post">
-              <PrimaryButton children="Read More" />
-            </Link>
+              <Link href={`/blog-post?id=${post.id}`} key={post.id}>
+                <PrimaryButton children="Read More" />
+              </Link>
             </div>
           </div>
         </article>

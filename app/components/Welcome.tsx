@@ -1,10 +1,9 @@
+//NANNA
 "use client";
 import { PiBowlFood } from "react-icons/pi";
 import { PiCheersFill } from "react-icons/pi";
 import Image from "next/image";
 import WelcomeCard from "./WelcomeCard";
-
-//NANNA
 
 const Welcome = () => {
   return (

@@ -1,4 +1,4 @@
-//Nanna
+//NANNA
 import Image from "next/image";
 import { FaFacebookF } from "react-icons/fa";
 import { FaSnapchatGhost } from "react-icons/fa";
@@ -15,7 +15,7 @@ const Footer = () => {
     >
       <div className="  bg-black/85 ">
         <div className="grid items-start gap-16 py-10 text-center md:grid-cols-3 max-w-[80%]  mx-auto ">
-          <div className="flex flex-col items-center justify-between h-full max-h-85">
+          <div className="flex flex-col items-center md:items-start justify-between h-full max-h-85">
             <Image
               src="/assets/logo.png"
               alt="logo"
@@ -24,12 +24,12 @@ const Footer = () => {
               className="object-contain pt-2"
             />
 
-            <div className="text-center">
+            <div className="text-center md:text-left">
               <h4>Location</h4>
               <p className="text-base!">Kompagnistræde 278 1265 København K</p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center md:text-left">
               <h4>Opening Hours</h4>
               <p className="text-base!">WED - THU: 10:30 PM TO 3 AM</p>
               <p className="text-base!">SAT - SUN: 11 PM TO 5 AM</p>
@@ -86,19 +86,26 @@ const Footer = () => {
             />
           </div>
 
-          <div>
-            <p className="text-base!">Stay Connected With Us </p>
-            <div className="flex flex-row justify-center gap-4 text-2xl mt-2 text-secondary">
-              <FaFacebookF />
-              <FaSnapchatGhost />
-              <FaInstagram />
+          <div className="flex flex-row justify-center gap-4 text-2xl mt-2 text-secondary">
+            <div className="group border-2 border-secondary cursor-pointer p-2 hover:border-accent">
+              <FaFacebookF className="text-secondary group-hover:text-accent" />
+            </div>
+            <div className="group border-2 border-secondary cursor-pointer p-2 hover:border-accent">
+              <FaSnapchatGhost className="text-secondary group-hover:text-accent" />
+            </div>
+            <div className="group border-2 border-secondary cursor-pointer p-2 hover:border-accent">
+              <FaInstagram className="text-secondary group-hover:text-accent" />
             </div>
           </div>
-          <div>
+
+          <div className="md:flex md:whitespace-nowrap md:gap-2 md:col-start-1  md:row-start-2">
             <p className="text-base!">Night Club PSD Template</p>
+            <p className="hidden md:block">-</p>
             <p className="text-base!">All Rights Reserved</p>
           </div>
-          <p className="text-base!">Copyright © NightClub</p>
+          <p className="text-base! md:col-start-3 md:row-start-2">
+            Copyright © NightClub
+          </p>
         </div>
       </div>
     </section>

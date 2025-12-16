@@ -83,7 +83,6 @@ const Gallery = () => {
 
   // Det aktuelle valgte billede
   const currentImage = selectedIndex !== null ? images[selectedIndex] : null;
-  
 
   return (
     <motion.section
@@ -92,7 +91,7 @@ const Gallery = () => {
       viewport={{ amount: 0.3, once: true }}
     >
       {/* Overskrift */}
-      <div className="max-w-[75%] mx-auto flex flex-col items-center mt-20 relative">
+      <div className="max-w-[75%] mx-auto flex flex-col items-center relative">
         <h1>Nigth Club Gallery</h1>
         <Image
           src="/assets/bottom_line.png"
