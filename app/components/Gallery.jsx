@@ -1,5 +1,5 @@
 // FRIDA
-//import framermotion - npm install framer-motion
+//install framermotion - npm install framer-motion
 
 "use client";
 import Image from "next/image";
@@ -274,7 +274,7 @@ const Gallery = () => {
                 </motion.div>
               </AnimatePresence>
               <div className="justify-end flex">
-                <PrimaryButton title="Read more" />
+                <PrimaryButton children="Read more" />
               </div>
             </div>
           </motion.div>

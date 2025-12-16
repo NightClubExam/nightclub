@@ -47,7 +47,7 @@ const BlogCard = () => {
             <p className="line-clamp-6">{post.content}</p>
             <div className="flex justify-center lg:justify-end my-6">
             <Link href="/blog-post">
-              <PrimaryButton title="Read More" />
+              <PrimaryButton children="Read More" />
             </Link>
             </div>
           </div>
