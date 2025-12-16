@@ -13,7 +13,7 @@ const Navigation = () => {
   const isActive = (path) => pathname === path; // Funktion til at tjekke om et link er aktivt
   return (
     <div className="sticky top-0 z-40">
-      <nav className="flex items-center justify-around h-25 bg-black relative z-10 px-6 border-4 border-[#FF2A70] ">
+      <nav className="flex items-center justify-around h-25 bg-black relative z-10 px-6 border-2 border-y-accent ">
         {/*Border med trekaneter i hjørnerne i de næste 2 divs  */}
         <div className="absolute top-0 left-0 w-0 h-0 border-t-30 border-t-[#FF2A70] border-r-30 border-r-transparent"></div>
         <div
