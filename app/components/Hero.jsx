@@ -29,7 +29,7 @@ export default function Hero() {
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
         {/* Logo */}
         <motion.div //motion.div fordi vi bruger framer-motion til animation
-          initial={{ opacity: 0, scale: 0.75 }} 
+          initial={{ opacity: 0, scale: 0.75 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
