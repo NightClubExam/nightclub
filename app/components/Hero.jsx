@@ -1,6 +1,6 @@
 //FRIDA
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -10,15 +10,19 @@ const backgrounds = [
 ];
 
 export default function Hero() {
-  const [bgImage] = useState(
-    backgrounds[Math.floor(Math.random() * backgrounds.length)],
-  );
+  const [bg, setBg] = useState(backgrounds[0])
+
+  useEffect(() => {
+    setBg(backgrounds[Math.floor(Math.random() * backgrounds.length)]);
+  }, [])
+    
+  
 
   return (
     <section className="relative w-full h-screen overflow-hidden">
       {/* Baggrund */}
       <Image
-        src={bgImage}
+        src={bg}
         alt="Hero background"
         fill
         priority
@@ -29,9 +33,10 @@ export default function Hero() {
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
         {/* Logo */}
         <motion.div //motion.div fordi vi bruger framer-motion til animation
-          initial={{ opacity: 0, scale: 0.75 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          initial={{ opacity: 0, rotateX: 90, transformOrigin: 'top center',}}
+          animate={{ opacity: 1, rotateX: 0,}}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          style={{transformPerspective: 1200,}}
         >
           <Image
             src="/assets/icon/logo.svg"
@@ -48,7 +53,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col items-center mt-4"
         >
-          <h1 className="text-3xl tracking-wide font-light ">
+          <h1 className="text-3xl tracking-[.98rem] font-light">
             Have a good time
           </h1>
           <Image
