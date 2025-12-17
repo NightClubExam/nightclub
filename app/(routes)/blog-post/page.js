@@ -13,7 +13,9 @@ export default function BlogPost({ searchParams }) {
       <Suspense>
         <Filtreringscontainer searchParams={searchParams} />
       </Suspense>
+      <Suspense fallback={<p>Loader kommentarer...</p>}>
       <CommentSection />
+      </Suspense>
       <Footer />
     </div>
   );

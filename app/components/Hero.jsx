@@ -53,7 +53,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col items-center mt-4"
         >
-          <h1 className="text-3xl tracking-[.98rem] font-light">
+          <h1 className="text-3xl lg:tracking-[.98rem] sm:tracking-[.90rem] font-light">
             Have a good time
           </h1>
           <Image
