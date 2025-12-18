@@ -68,21 +68,21 @@ const Subscription = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-4 items-center justify-center md:flex-row md:items-end"
       >
-        {/* Success besked */}
-        {submissionStatus && (
-          <p className="text-green-500!">
-            Your message has been sent successfully!
-          </p>
-        )}
-
-        {/* Error besked */}
-        {submissionError && (
-          <p className="text-red-400!">
-            Something went wrong. Please try again.
-          </p>
-        )}
         {/* Email input */}
         <div className="flex flex-col w-full md:w-auto relative mb-6 md:mb-0">
+          {/* Success besked */}
+          {submissionStatus && (
+            <p className="text-green-500!">
+              Your message has been sent successfully!
+            </p>
+          )}
+
+          {/* Error besked */}
+          {submissionError && (
+            <p className="text-red-400!">
+              Something went wrong. Please try again.
+            </p>
+          )}
           <input
             {...register("email", {
               required: "Email is required",
