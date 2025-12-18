@@ -107,10 +107,10 @@ const ReservationForm = ({ selectedTable }) => {
             })}
             type="text"
             placeholder="Your Name"
-            className="border border-white text-white p-4 w-full placeholder-white rounded"
+            className={`p-4 text-white placeholder-white w-full border rounded ${errors.name ? "border-red-400" : "border-white"}`}
           />
           {errors.name && (
-            <span className="text-red-400">{errors.name.message}</span>
+            <span className="text-red-400 ">{errors.name.message}</span>
           )}
         </div>
         <div className="flex flex-col">
@@ -124,7 +124,7 @@ const ReservationForm = ({ selectedTable }) => {
             })}
             type="email"
             placeholder="Your Email"
-            className="border border-white text-white p-4 w-full placeholder-white rounded"
+            className={`p-4 text-white placeholder-white w-full border rounded ${errors.email ? "border-red-400" : "border-white"}`}
           />
           {errors.email && (
             <span className="text-red-400">{errors.email.message}</span>
@@ -139,13 +139,17 @@ const ReservationForm = ({ selectedTable }) => {
                 value: 15,
                 message: "Table Number must be between 1 and 15",
               },
+              pattern: {
+                value: /^\d+$/,
+                message: "Only numbers are allowed",
+              },
               validate: (value) =>
                 Number.isInteger(Number(value)) ||
                 "Table Number must be a whole number",
             })}
             type="number"
             placeholder="Table Number"
-            className="border border-white text-white p-4 w-full placeholder-white rounded"
+            className={`p-4 text-white placeholder-white w-full border rounded ${errors.tableNumber ? "border-red-400" : "border-white"}`}
           />
           {errors.tableNumber && (
             <span className="text-red-400">{errors.tableNumber.message}</span>
@@ -161,13 +165,17 @@ const ReservationForm = ({ selectedTable }) => {
                 message:
                   "Maximum 20 guests allowed - write email for larger groups",
               },
+              pattern: {
+                value: /^\d+$/,
+                message: "Only numbers are allowed",
+              },
               validate: (value) =>
                 Number.isInteger(Number(value)) ||
                 "Number of Guests must be a whole number",
             })}
             type="number"
             placeholder="Number of Guests"
-            className="border border-white text-white p-4 w-full placeholder-white rounded"
+            className={`p-4 text-white placeholder-white w-full border rounded ${errors.numberOfGuests ? "border-red-400" : "border-white"}`}
           />
           {errors.numberOfGuests && (
             <span className="text-red-400">
@@ -188,7 +196,7 @@ const ReservationForm = ({ selectedTable }) => {
             })}
             type="date"
             placeholder="Select Date"
-            className="border border-white text-white p-4 w-full placeholder-white rounded"
+            className={`p-4 text-white placeholder-white w-full border rounded ${errors.date ? "border-red-400" : "border-white"}`}
           />
           {errors.date && (
             <span className="text-red-400">{errors.date.message}</span>
@@ -214,7 +222,7 @@ const ReservationForm = ({ selectedTable }) => {
             })}
             type="tel"
             placeholder="Your Contact Number"
-            className="border border-white text-white p-4 w-full placeholder-white rounded"
+            className={`p-4 text-white placeholder-white w-full border rounded ${errors.contactNumber ? "border-red-400" : "border-white"}`}
           />
           {errors.contactNumber && (
             <span className="text-red-400">{errors.contactNumber.message}</span>
@@ -230,7 +238,7 @@ const ReservationForm = ({ selectedTable }) => {
             })}
             rows="10"
             placeholder="Your Comment"
-            className="w-full border border-white text-white p-4 placeholder-white rounded"
+            className={`p-4 text-white placeholder-white w-full border rounded ${errors.comments ? "border-red-400" : "border-white"}`}
           />
           {errors.comments && (
             <span className="text-red-400">{errors.comments.message}</span>
