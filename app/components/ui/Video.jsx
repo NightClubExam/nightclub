@@ -38,7 +38,7 @@ const Video = () => {
       </div>
 
       {/* Kun én video ad gangen */}
-      <div className="relative">
+      <div className="relative cursor-pointer">
         <div className="absolute top-0 left-0 w-0 h-0 border-t-50 border-t-accent border-r-50 border-r-transparent"></div>{" "}
         <div className="absolute bottom-0 right-0 w-0 h-0 border-b-50 border-b-accent border-l-50 border-l-transparent"></div>
         <video
