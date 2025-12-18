@@ -25,7 +25,7 @@ const PageHero = ({title}) => {
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
           <h1>{title}</h1>
           <Image
-            src="/assets/bottom_line.png" // streg fra dine assets
+            src="/assets/bottom_line.png" // streg fra vores assets
             alt="Dekorativ streg"
             width={300}
             height={2}
