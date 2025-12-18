@@ -1,14 +1,14 @@
-import Navigation from "./components/Navigation";
-import Hero from "./components/Hero";
-import Welcome from "./components/Welcome";
-import Events from "./components/Events";
-import Gallery from "./components/Gallery/Gallery";
-import MediaPlayer from "./components/MediaPlayer";
-import Video from "./components/Video";
-import Testimonials from "./components/Testimonials";
-import RecentBlog from "./components/RecentBlog";
-import Subscription from "./components/Subscription";
-import Footer from "./components/Footer";
+import Navigation from "./components/layouts/Navigation";
+import Hero from "./components/ui/Hero";
+import Welcome from "./components/layouts/Welcome";
+import Events from "./components/ui/Events";
+import Gallery from "./components/gallery/Gallery";
+import MediaPlayer from "./components/ui/MediaPlayer";
+import Video from "./components/ui/Video";
+import Testimonials from "./components/ui/Testimonials";
+import RecentBlog from "./components/blogs/RecentBlog";
+import Subscription from "./components/forms/Subscription";
+import Footer from "./components/layouts/Footer";
 import { Suspense } from "react";
 
 export default function Home() {

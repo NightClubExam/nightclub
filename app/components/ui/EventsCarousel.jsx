@@ -5,12 +5,12 @@
 
 import { useState, useEffect } from "react"; //udeEffect for at detektere skærmstørrelse
 import Image from "next/image";
-import { Button } from "@/componentsShadcn/ui/button"; // Importerer shadcn's Button-komponent
+import { Button } from "../../components/componentsShadcn/ui/button"; // Importerer shadcn's Button-komponent
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from "@/componentsShadcn/ui/carousel"; // Importerer shadcn's Carousel-komponenter
+} from "../../components/componentsShadcn/ui/carousel"; // Importerer shadcn's Carousel-komponenter
 
 // Props: modtager liste af events fra server-komponenten
 export default function EventsCarousel({ events }) {

@@ -1,10 +1,10 @@
 //NANNA
-import Navigation from "../../components/Navigation";
+import Navigation from "../../components/layouts/Navigation";
 import { Suspense } from "react";
-import Footer from "../../components/Footer";
+import Footer from "../../components/layouts/Footer";
 import Image from "next/image";
-import PageHero from "../../components/PageHero";
-import CommentSection from "../../components/CommentSection";
+import PageHero from "../../components/layouts/PageHero";
+import CommentSection from "../../components/blogs/CommentSection";
 
 export default function BlogPost({ searchParams }) {
   return (

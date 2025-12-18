@@ -1,11 +1,11 @@
 "use client";
 
-import Navigation from "../../components/Navigation";
-import PageHero from "../../components/PageHero";
-import Tables from "../../components/Tables";
-import Footer from "../../components/Footer";
+import Navigation from "../../components/layouts/Navigation";
+import PageHero from "../../components/layouts/PageHero";
+import Tables from "../../components/ui/Tables";
+import Footer from "../../components/layouts/Footer";
 import { useState } from "react";
-import ReservationForm from "../../components/ReservationForm";
+import ReservationForm from "../../components/forms/ReservationForm";
 
 export default function BookTable() {
   //State til at gemme bordnummer:
@@ -14,10 +14,7 @@ export default function BookTable() {
     <div>
       <Navigation />
       <PageHero title="book table" />
-      <Tables
-        onTableSelect={setSelectedTable}
-        selectedTable={selectedTable}
-      />
+      <Tables onTableSelect={setSelectedTable} selectedTable={selectedTable} />
       <ReservationForm
         selectedTable={selectedTable}
         onTableSelect={setSelectedTable}

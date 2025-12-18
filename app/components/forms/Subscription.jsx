@@ -3,7 +3,7 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import PrimaryButton from "./PrimaryButton";
+import PrimaryButton from "../ui/PrimaryButton";
 
 // Subscription Komponent:
 const Subscription = () => {

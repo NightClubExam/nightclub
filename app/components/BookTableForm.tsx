@@ -2,7 +2,7 @@
 
 "use client";
 import { useForm } from "react-hook-form";
-import PrimaryButton from "./PrimaryButton";
+import PrimaryButton from "./ui/PrimaryButton";
 import { useState, useEffect } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";

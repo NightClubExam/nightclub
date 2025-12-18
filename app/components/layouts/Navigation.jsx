@@ -16,10 +16,7 @@ const Navigation = () => {
       <nav className="flex items-center justify-around h-25 bg-black relative z-10 px-6 border-2 border-y-accent ">
         {/*Border med trekaneter i hjørnerne i de næste 2 divs  */}
         <div className="absolute top-0 left-0 w-0 h-0 border-t-30 border-t-[#FF2A70] border-r-30 border-r-transparent"></div>
-        <div
-          className="absolute bottom-0 right-0 w-0 h-0 border-b-30 border-b-[#FF2A70]
-border-l-30 border-l-transparent"
-        ></div>
+        <div className="absolute bottom-0 right-0 w-0 h-0 border-b-30 border-b-[#FF2A70] border-l-30 border-l-transparent"></div>
 
         <div>
           <a href="/">
@@ -44,7 +41,7 @@ border-l-30 border-l-transparent"
           <li>
             <Link
               href="/"
-              className={`nav-underline ${isActive("/") ? "active" : ""}`}
+              className={`nav-underline ${isActive("/") ? "active text-accent" : ""}`}
             >
               {" "}
               HOME{" "}
@@ -53,7 +50,7 @@ border-l-30 border-l-transparent"
           <li>
             <Link
               href="/blog"
-              className={`nav-underline ${isActive("/blog") ? "active" : ""}`}
+              className={`nav-underline ${isActive("/blog") ? "active text-accent" : ""}`}
             >
               BLOG
             </Link>
@@ -61,7 +58,7 @@ border-l-30 border-l-transparent"
           <li>
             <Link
               href="/book-table"
-              className={`nav-underline ${isActive("/book-table") ? "active" : ""}`}
+              className={`nav-underline ${isActive("/book-table") ? "active text-accent" : ""} `}
             >
               BOOK TABLE
             </Link>
@@ -69,7 +66,7 @@ border-l-30 border-l-transparent"
           <li>
             <Link
               href="/contact-us"
-              className={`nav-underline ${isActive("/contact-us") ? "active" : ""}`}
+              className={`nav-underline ${isActive("/contact-us") ? "active text-accent" : ""}`}
             >
               CONTACT US
             </Link>

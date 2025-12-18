@@ -1,7 +1,7 @@
-import Navigation from "../../components/Navigation";
-import PageHero from "../../components/PageHero";
-import BlogPostSection from "../../components/BlogPostSection";
-import Footer from "../../components/Footer";
+import Navigation from "../../components/layouts/Navigation";
+import PageHero from "../../components/layouts/PageHero";
+import BlogPostSection from "../../components/blogs/BlogPostSection";
+import Footer from "../../components/layouts/Footer";
 
 export default function Blog() {
   return (

@@ -1,9 +1,9 @@
 // FRIDA
-"use client"
+"use client";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { BiCaretRightSquare, BiCaretLeftSquare } from "react-icons/bi";
-import PrimaryButton from "../PrimaryButton";
+import PrimaryButton from "../ui/PrimaryButton";
 import { useEffect } from "react";
 
 // Afgører om swipet er "kraftigt nok"
@@ -16,10 +16,15 @@ export default function GalleryModal({
   selectedIndex,
   setSelectedIndex,
 }) {
-  // Scroll lock styres her 
-  useEffect(() => { if (selectedIndex !== null) { document.body.style.overflow = "hidden"; // lås scroll når modal er åben 
-  } else { document.body.style.overflow = "auto"; // gendan scroll når modal er lukket 
-  } }, [selectedIndex]); if (!images.length) return null;
+  // Scroll lock styres her
+  useEffect(() => {
+    if (selectedIndex !== null) {
+      document.body.style.overflow = "hidden"; // lås scroll når modal er åben
+    } else {
+      document.body.style.overflow = "auto"; // gendan scroll når modal er lukket
+    }
+  }, [selectedIndex]);
+  if (!images.length) return null;
 
   // Handlers til næste/forrige billede
   const handleNext = (e) => {

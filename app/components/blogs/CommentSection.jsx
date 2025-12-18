@@ -1,7 +1,7 @@
 //Alberte Remmer
 
 //Måske use server? 
-import CommentForm from "./CommentForm";
+import CommentForm from "../forms/CommentForm";
 
 
 

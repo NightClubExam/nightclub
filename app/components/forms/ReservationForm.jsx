@@ -2,10 +2,10 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
-import PrimaryButton from "./PrimaryButton";
+import PrimaryButton from "../ui/PrimaryButton";
 import { IoCheckmarkCircle } from "react-icons/io5";
 
-const ReservationForm = ({ selectedTable}) => {
+const ReservationForm = ({ selectedTable }) => {
   const {
     register,
     handleSubmit,
